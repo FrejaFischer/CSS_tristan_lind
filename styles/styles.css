@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: var(--white);
+    background-color: var(--off-white);
     font-family: var(--main-font);
     font-weight: var(--font-weight-light);
     font-style: var(--font-style-normal);
@@ -248,6 +248,61 @@ main {
         }
         #contact_img {
             display: none;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            padding: var(--mobile-x-margin);
+
+            h3 {
+                font-size: var(--font-size-medium);
+            }
+
+            .profile_container {
+                align-self: center;
+                height: var(--contact-img-size);
+                width: var(--contact-img-size);
+                overflow: hidden;
+                border-radius: var(--border-radius-full);
+                .profile_img {
+                    max-height: 100%;
+                    min-width: 100%;
+                }
+            }
+            a {
+                color: var(--dark-red);
+                text-decoration: none;
+            }
+            form {
+                margin-top: var(--distance-medium);
+
+                fieldset {
+                    padding: var(--distance-small);
+                    border-radius: var(--border-radius);
+
+                    legend {
+                        padding: 0 var(--distance-small);
+                    }
+                    
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                    }
+                    button {
+                        background-color: var(--dark-blue);
+                        color: var(--white);
+                        margin-top: var(--distance-medium);
+                        padding: var(--distance-small);
+                        border: none;
+                        border-radius: var(--border-radius);
+                    }
+                }
+            }
+        }
+
+        section:first-of-type {
+            border-bottom: solid 1px var(--mustard-yellow);
         }
     }
 }

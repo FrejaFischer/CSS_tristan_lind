@@ -11,6 +11,9 @@
     --mobile-x-margin: 1.5rem;
 
     --border-radius: 0.5rem;
+    --border-radius-full: 100%;
+
+    --contact-img-size: 200px;
 
     /* Colors */
     --dark-red:#582728;
