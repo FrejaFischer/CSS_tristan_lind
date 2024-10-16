@@ -14,7 +14,7 @@ body {
     color: var(--black);
 }
 
-h1, h2, h3 {
+h1, h2 {
     font-family: var(--display-font);
     font-weight: var(--font-weight-normal);
     font-style: var(--font-style-normal);
@@ -88,6 +88,13 @@ header {
 }
 
 main {
+    .link_to_top {
+        background-color: transparent;
+        border: none;
+        align-self: flex-end;
+        padding: var(--distance-medium) var(--mobile-x-margin) 0 var(--mobile-x-margin);
+    }
+
     #new_release_section{
         background-color: var(--mustard-yellow);
         display: flex;
@@ -145,32 +152,33 @@ main {
         article {
             text-align: center;
 
-            p:nth-of-type(1){
+            h3{
                 font-size: var(--font-size-small);
                 font-weight: var(--font-weight-bold);
             }
-            p:nth-of-type(2){
+            p:nth-of-type(1){
                 font-weight: var(--font-weight-bold);
             }
         }
     }
 
     #on_tour {
+        display: flex;
+        flex-direction: column;
         h2 {
             background-color: var(--light-blue);
             padding: var(--distance-medium);
             color: var(--mustard-yellow);
         }
-        img {
+        #on_tour_img {
             max-width: 100%;
-            padding: var(--distance-medium) var(--mobile-x-margin);
+            padding: var(--distance-medium) var(--mobile-x-margin) 0 var(--mobile-x-margin);
         }
 
         .tour_article {
-            margin: 0 var(--mobile-x-margin);
+            margin: var(--distance-medium) var(--mobile-x-margin) 0 var(--mobile-x-margin);
             padding-bottom: var(--distance-medium);
             border-bottom: solid 1px var(--mustard-yellow);
-
             div {
                 display: flex;
                 gap: var(--distance-small);
@@ -181,15 +189,65 @@ main {
                     padding: 0;
                 }
             }
-
             .tour_title{
                 color: var(--dark-blue);
+                font-size: var(--font-size-x-small);
                 font-weight: var(--font-weight-bold);
             }
             .role_info {
                 color: var(--dark-red);
                 font-weight: var(--font-weight-bold);
             }
+        }
+    }
+
+    #books {
+        display: flex;
+        flex-direction: column;
+        h2 {
+            background-color: var(--light-blue);
+            padding: var(--distance-medium);
+            color: var(--mustard-yellow);
+        }
+
+        article{
+            display: flex;
+            flex-direction: column;
+            margin: var(--mobile-x-margin);
+            margin-bottom: 0;
+            padding-bottom: var(--distance-small);
+            border-bottom: solid 1px var(--mustard-yellow);
+
+            img {
+                align-self: center;
+                max-width: 80%;
+                margin-bottom: var(--distance-medium);
+            }
+
+            h3{
+                margin-bottom: var(--distance-small);
+                font-size: var(--font-size-small);
+                font-weight: var(--font-weight-bold);
+            }
+            p {
+                margin-bottom: var(--distance-small);
+                span {
+                    font-weight: var(--font-weight-bold);
+                }
+            } 
+        }
+    }
+
+    #contact {
+        display: flex;
+        flex-direction: column;
+        h2 {
+            background-color: var(--light-blue);
+            padding: var(--distance-medium);
+            color: var(--mustard-yellow);
+        }
+        #contact_img {
+            display: none;
         }
     }
 }
@@ -209,6 +267,13 @@ main {
 
     aside {
         display: block;
+    }
+
+    #contact {
+
+        #contact_img {
+            display: block;
+        }
     }
 }
 }
