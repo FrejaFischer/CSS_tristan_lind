@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+
+    /* Distances */
+    --distance-x-large:2rem;
+    --distance-large: 1.5rem;
+    --distance-medium:1rem;
+    --distance-small:0.5rem;
+
+    --mobile-x-margin: 1.5rem;
+
+    --border-radius: 0.5rem;
+
+    /* Colors */
+    --dark-red:#582728;
+    --dark-blue:#262858;
+    --light-blue:#61718E;
+    --mustard-yellow:#D6C37F;
+    --white:white;
+    --black:black;
+    --off-white:#FFFAF0; 
+
+    /* Fonts */
+    --display-font: "Roboto Condensed", sans-serif;
+    --main-font: "Roboto", sans-serif;
+    
+    --font-size-x-large: 2.5rem;
+    --font-size-large: 2rem;
+    --font-size-medium: 1.5rem;
+    --font-size-small: 1.2rem;
+    --font-size-x-small: 1rem;
+
+    --font-weight-light: 300; 
+    --font-weight-normal: 400;
+    --font-weight-bold: 500; 
+
+    --font-style-normal: normal;
+    --font-style-italic: italic;
+}
