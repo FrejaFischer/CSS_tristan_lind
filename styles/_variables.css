@@ -59,5 +59,6 @@
          /* image sizes */
         --header-img-size: 6rem;
         --contact-img-max-height: 600px;
+        --new-release-img-size: 200px;
     }
 }
