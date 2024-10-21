@@ -54,7 +54,7 @@ header {
     select {
         align-self: flex-start;
         font-size: var(--font-size-small);
-        margin: var(--distance-medium) var(--mobile-x-margin);
+        margin: var(--distance-medium) var(--x-margin);
     }
 
     nav {
@@ -75,6 +75,7 @@ header {
                     color: var(--white);
                     font-size: var(--font-size-small);
                     text-decoration: none;
+                    font-weight: var(--font-weight-normal);
                 }
             }
             li :hover{
@@ -93,7 +94,7 @@ main {
         background-color: transparent;
         border: none;
         align-self: flex-end;
-        padding: var(--distance-medium) var(--mobile-x-margin) 0 var(--mobile-x-margin);
+        padding: var(--distance-medium) var(--x-margin) 0 var(--x-margin);
     }
 
     #new_release_section {
@@ -103,7 +104,7 @@ main {
         gap: var(--distance-medium);
         align-items: center;
         text-align: center;
-        padding: var(--distance-medium) var(--mobile-x-margin);
+        padding: var(--distance-medium) var(--x-margin);
 
         div:first-of-type {
             color: var(--white);
@@ -125,9 +126,12 @@ main {
     }
 
     #bio {
-        margin: var(--mobile-x-margin);
+        margin: var(--x-margin);
         p {
             margin: 1rem 0;
+        }
+        p:first-of-type {
+            margin: 0;
         }
         #quote{
             display: flex;
@@ -145,23 +149,28 @@ main {
                 font-style: var(--font-style-normal);
             }
         }
-    }
 
-    aside {
-        display: none;
-
-        article {
-            text-align: center;
-
-            h3{
-                font-size: var(--font-size-small);
-                font-weight: var(--font-weight-bold);
-            }
-            p:nth-of-type(1){
-                font-weight: var(--font-weight-bold);
+        aside {
+            display: none;
+    
+            article {
+                text-align: center;
+                margin-bottom: var(--distance-medium);
+    
+                h3{
+                    font-size: var(--font-size-small);
+                    font-weight: var(--font-weight-bold);
+                }
+                p:first-of-type {
+                    font-weight: var(--font-weight-bold);
+                }
+                p:last-of-type {
+                    margin: 0;
+                }
             }
         }
     }
+
 
     #on_tour {
         display: flex;
@@ -173,11 +182,14 @@ main {
         }
         #on_tour_img {
             max-width: 100%;
-            padding: var(--distance-medium) var(--mobile-x-margin) 0 var(--mobile-x-margin);
+            padding: var(--distance-medium) var(--x-margin) 0 var(--x-margin);
+        }
+        #on_tour_img_big {
+            display: none;
         }
 
         .tour_article {
-            margin: var(--distance-medium) var(--mobile-x-margin) 0 var(--mobile-x-margin);
+            margin: var(--distance-medium) var(--x-margin) 0 var(--x-margin);
             padding-bottom: var(--distance-medium);
             border-bottom: solid 1px var(--mustard-yellow);
             div {
@@ -214,7 +226,7 @@ main {
         article{
             display: flex;
             flex-direction: column;
-            margin: var(--mobile-x-margin);
+            margin: var(--x-margin);
             margin-bottom: 0;
             padding-bottom: var(--distance-small);
             border-bottom: solid 1px var(--mustard-yellow);
@@ -254,7 +266,7 @@ main {
         section {
             display: flex;
             flex-direction: column;
-            padding: var(--mobile-x-margin);
+            padding: var(--x-margin);
 
             h3 {
                 font-size: var(--font-size-medium);
@@ -359,7 +371,7 @@ footer {
         #header_img{
             display: block;
             border-radius: var(--border-radius-full);
-            height: var(--distance-xxx-large);
+            height: var(--header-img-size);
             margin-left: var(--distance-large);
         }
 
@@ -411,6 +423,17 @@ footer {
                 img {
                     height: var(--new-release-img-size);
                 }
+            }
+        }
+
+        #on_tour {
+            #on_tour_img {
+                display: none;
+            }
+            #on_tour_img_big {
+                display: block;
+                max-width: 100%;
+                padding: var(--distance-medium) var(--x-margin) 0 var(--x-margin);
             }
         }
 
@@ -476,7 +499,7 @@ footer {
         display: grid;
         grid-template-columns: 2fr 1fr 2fr;
         grid-template-rows: 1fr 1fr 1fr;
-        padding: var(--distance-medium) var(--mobile-x-margin) 0 var(--mobile-x-margin);
+        padding: var(--distance-medium) var(--x-margin) 0 var(--x-margin);
         font-size: var(--font-size-x-small);
 
         div:first-of-type {
@@ -503,21 +526,52 @@ footer {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 820px) {
+    header {
+        h1 {
+            font-size: var(--font-size-xx-large);
+        }
+    }  
 
-main {
+    main {
+        #new_release_section {
+            div:first-of-type {
+                padding: var(--distance-medium) var(--distance-xxx-large);
+            }
 
-    aside {
-        display: block;
-    }
+            p:first-of-type {
+                font-size: var(--font-size-large);
+            }
+        }
 
-    #contact {
+        #bio {
+            display: flex;
+            gap: var(--distance-x-large);
+            aside {
+                display: block;
+                #aside_full_view {
+                    display: none;
+                }
+            }
+        }
 
-        #contact_img {
-            display: block;
+        #contact {
+            > div {
+                display: grid;
+                grid-template-columns: 3fr 2fr;
+                grid-template-rows: auto auto 1fr;
+                margin: var(--x-margin);
+
+                #contact_img {
+                    display: block;
+                    max-width: 100%;
+                    grid-column: 2/3;
+                    grid-row: 1/3;
+                }
+            }
+
         }
     }
-}
 }
 
 
