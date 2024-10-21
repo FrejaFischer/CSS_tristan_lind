@@ -3,6 +3,8 @@
 :root {
 
     /* Distances */
+    --distance-xxx-large: 5rem;
+    --distance-xx-large: 3rem;
     --distance-x-large:2rem;
     --distance-large: 1.5rem;
     --distance-medium:1rem;
@@ -13,6 +15,8 @@
     --border-radius: 0.5rem;
     --border-radius-full: 100%;
 
+    /* image sizes */
+    --new-release-img-size: 150px;
     --contact-img-size: 200px;
 
     /* Colors */
@@ -40,4 +44,12 @@
 
     --font-style-normal: normal;
     --font-style-italic: italic;
+
+    /* small tablet changes */
+    @media (min-width: 640px) {
+        --mobile-x-margin: 1rem;
+
+        /* image sizes */
+        --contact-img-size: 120px;
+    }
 }
