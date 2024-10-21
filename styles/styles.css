@@ -7,11 +7,10 @@
 }
 
 body {
-    background-color: var(--off-white);
+    color: var(--black);
     font-family: var(--main-font);
     font-weight: var(--font-weight-light);
     font-style: var(--font-style-normal);
-    color: var(--black);
 }
 
 h1, h2 {
@@ -90,6 +89,7 @@ header {
 
 /* main styling */
 main {
+    background-color: var(--off-white);
     .link_to_top {
         background-color: transparent;
         border: none;
@@ -171,10 +171,10 @@ main {
         }
     }
 
-
     #on_tour {
         display: flex;
         flex-direction: column;
+        padding-bottom: var(--distance-medium);
         h2 {
             background-color: var(--light-blue);
             padding: var(--distance-medium);
@@ -217,6 +217,7 @@ main {
     #books {
         display: flex;
         flex-direction: column;
+        padding-bottom: var(--distance-medium);
         h2 {
             background-color: var(--light-blue);
             padding: var(--distance-medium);
@@ -249,11 +250,13 @@ main {
                 }
             } 
         }
+
     }
 
     #contact {
         display: flex;
         flex-direction: column;
+        padding-bottom: var(--distance-medium);
         h2 {
             background-color: var(--light-blue);
             padding: var(--distance-medium);
@@ -274,8 +277,8 @@ main {
 
             .profile_container {
                 align-self: center;
-                height: var(--contact-img-size);
-                width: var(--contact-img-size);
+                height: var(--contact-profile-img-size);
+                width: var(--contact-profile-img-size);
                 overflow: hidden;
                 border-radius: var(--border-radius-full);
                 .profile_img {
@@ -332,7 +335,6 @@ footer {
     align-items: center;
     gap: var(--distance-medium);
     padding: var(--distance-medium) 0;
-    margin-top: var(--distance-medium);
     background-color: var(--dark-blue);
     color: var(--white);
     text-align: center;
@@ -545,7 +547,8 @@ footer {
         }
 
         #bio {
-            display: flex;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
             gap: var(--distance-x-large);
             aside {
                 display: block;
@@ -558,8 +561,8 @@ footer {
         #contact {
             > div {
                 display: grid;
-                grid-template-columns: 3fr 2fr;
-                grid-template-rows: auto auto 1fr;
+                grid-template-columns: 1fr minmax(200px, 400px);
+                grid-template-rows: auto auto;
                 margin: var(--x-margin);
 
                 #contact_img {
@@ -575,4 +578,59 @@ footer {
 }
 
 
-@media (min-width: 1024px) {}
+@media (min-width: 1024px) {
+    body {
+        margin: 0 10%;
+    }
+    main {
+        #bio {
+            aside {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: var(--distance-medium);
+
+                #aside_full_view {
+                    display: block;
+                }
+            }
+        }
+        .article_container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--distance-medium);
+            margin: var(--x-margin) ;
+        }
+        #on_tour {
+            .article_container {
+            .tour_article {
+                margin: 0;
+                flex: 1 1 500px;
+                padding: var(--distance-medium);
+                border: solid 1px var(--mustard-yellow);
+                border-radius: var(--border-radius);
+            }
+        }
+        }
+        #books {
+            .article_container {
+            article{
+                flex: 1 1 500px;
+                margin: 0;
+                padding: var(--distance-medium);
+                border: solid 1px var(--mustard-yellow);
+                border-radius: var(--border-radius);
+            }   
+        } 
+        }
+        #contact {
+            > div {
+                gap: var(--distance-medium);
+                section {
+                    height: fit-content;
+                    border: solid 1px var(--mustard-yellow);
+                    border-radius: var(--border-radius);
+                }
+            }
+        }
+    }
+}

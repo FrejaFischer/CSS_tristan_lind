@@ -18,7 +18,7 @@
     /* image sizes */
     --header-img-size: 5rem;
     --new-release-img-size: 150px;
-    --contact-img-size: 200px;
+    --contact-profile-img-size: 200px;
 
     /* Colors */
     --dark-red:#582728;
@@ -52,10 +52,12 @@
         --x-margin: 1rem;
         
         /* image sizes */
-        --contact-img-size: 120px;
+        --contact-profile-img-size: 120px;
+        --contact-img-max-height: 400px;
     }
     @media (min-width: 820px) {
          /* image sizes */
         --header-img-size: 6rem;
+        --contact-img-max-height: 600px;
     }
 }
